@@ -3,10 +3,12 @@ import gradio as gr
 from dotenv import load_dotenv
 from elevenlabs.client import ElevenLabs
 from elevenlabs import save
+from openai import OpenAI
 
 load_dotenv()
 
-client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
+eleven_client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
+openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def load_knowledge_base():
     with open("knowledge_base/property_knowledge_base.md", "r", encoding="utf-8") as f:
@@ -19,29 +21,41 @@ def ask_concierge(question: str):
     try:
         knowledge_base = load_knowledge_base()
         
-        prompt = f"""You are a concierge for a short-term rental property.
-Answer the guest question using only the property information below.
-If the answer is not available, say the host will follow up.
-Keep your tone warm, friendly and concise.
+        # Step 1: Generate text answer using OpenAI
+        completion = openai_client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {
+                    "role": "system",
+                    "content": f"""You are a concierge for a short-term rental property.
+Answer guest questions using ONLY the property information below.
+If the answer is not in the information, say: 'The host will follow up on that shortly.'
+Keep responses warm, friendly, and under 3 sentences.
 
 Property Information:
-{knowledge_base}
-
-Guest Question: {question}
-
-Response:"""
-
-        # Generate spoken audio using ElevenLabs TTS
-        audio = client.text_to_speech.convert(
+{knowledge_base}"""
+                },
+                {
+                    "role": "user",
+                    "content": question
+                }
+            ],
+            max_tokens=150
+        )
+        
+        text_answer = completion.choices[0].message.content.strip()
+        
+        # Step 2: Convert answer to speech using ElevenLabs
+        audio = eleven_client.text_to_speech.convert(
             voice_id="EXAVITQu4vr4xnSDxMaL",
-            text=prompt,
+            text=text_answer,
             model_id="eleven_turbo_v2_5",
         )
         
         audio_path = "/tmp/response_audio.mp3"
         save(audio, audio_path)
         
-        return "Voice response generated — press play to hear the answer.", audio_path
+        return text_answer, audio_path
     
     except Exception as e:
         return f"Error: {str(e)}", None
