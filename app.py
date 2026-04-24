@@ -2,44 +2,50 @@ import os
 import gradio as gr
 from dotenv import load_dotenv
 from elevenlabs.client import ElevenLabs
-from elevenlabs.conversational_ai.conversation import Conversation
-from elevenlabs.conversational_ai.default_audio_interface import DefaultAudioInterface
+from elevenlabs import save
 
 load_dotenv()
 
-ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
-AGENT_ID = os.getenv("ELEVENLABS_AGENT_ID")
+client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 
-client = ElevenLabs(api_key=ELEVENLABS_API_KEY)
+def load_knowledge_base():
+    with open("knowledge_base/property_knowledge_base.md", "r", encoding="utf-8") as f:
+        return f.read()
 
 def ask_concierge(question: str):
     if not question.strip():
         return "Please enter a question.", None
+    
+    try:
+        knowledge_base = load_knowledge_base()
         
-    # Use ElevenLabs text-based agent call
-    response = client.conversational_ai.agents.chat(
-        agent_id=AGENT_ID,
-        messages=[{"role": "user", "content": question}]
-    )
+        prompt = f"""You are a concierge for a short-term rental property.
+Answer the guest question using only the property information below.
+If the answer is not available, say the host will follow up.
+Keep your tone warm, friendly and concise.
 
-    text_answer = response.messages[-1]["content"]
+Property Information:
+{knowledge_base}
 
-    # Generate spoken audio from the response
-    audio = client.text_to_speech.convert(
-        voice_id=response.agent_voice_id if hasattr(response, "agent_voice_id") else "EXAVITQu4vr4xnSDxMaL",
-        text=text_answer,
-        model_id="eleven_turbo_v2_5",
-    )
+Guest Question: {question}
 
-    audio_path = "response_audio.mp3"
-    with open(audio_path, "wb") as f:
-        for chunk in audio:
-            f.write(chunk)
+Response:"""
 
-    return text_answer, audio_path
+        # Generate spoken audio using ElevenLabs TTS
+        audio = client.text_to_speech.convert(
+            voice_id="EXAVITQu4vr4xnSDxMaL",
+            text=prompt,
+            model_id="eleven_turbo_v2_5",
+        )
+        
+        audio_path = "/tmp/response_audio.mp3"
+        save(audio, audio_path)
+        
+        return "Voice response generated — press play to hear the answer.", audio_path
+    
+    except Exception as e:
+        return f"Error: {str(e)}", None
 
-
-# --- Gradio UI ---
 with gr.Blocks(title="STR Concierge") as demo:
     gr.Markdown("# 🏡 STR Concierge")
     gr.Markdown("AI voice concierge for short-term rental guests — powered by ElevenLabs.")
@@ -72,9 +78,7 @@ with gr.Blocks(title="STR Concierge") as demo:
         outputs=[text_output, audio_output]
     )
 
-if __name__ == "__main__":
-    demo.launch(
+demo.launch(
     server_name="0.0.0.0",
-    server_port=int(os.environ.get("PORT", 7860)),
-    root_path="/"
+    server_port=int(os.environ.get("PORT", 7860))
 )
