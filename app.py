@@ -15,7 +15,7 @@ client = ElevenLabs(api_key=ELEVENLABS_API_KEY)
 def ask_concierge(question: str):
     if not question.strip():
         return "Please enter a question.", None
-
+        
     # Use ElevenLabs text-based agent call
     response = client.conversational_ai.agents.chat(
         agent_id=AGENT_ID,
