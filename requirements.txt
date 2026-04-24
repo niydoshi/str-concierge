@@ -1,2 +1,3 @@
-openai
+elevenlabs
+gradio
 python-dotenv
