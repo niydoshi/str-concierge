@@ -40,7 +40,7 @@ def ask_concierge(question: str):
 
 
 # --- Gradio UI ---
-with gr.Blocks(title="STR Concierge", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="STR Concierge") as demo:
     gr.Markdown("# 🏡 STR Concierge")
     gr.Markdown("AI voice concierge for short-term rental guests — powered by ElevenLabs.")
 
