@@ -1,13 +1,3 @@
-Good news — the content is genuinely strong because it's a **real property**. That's actually a big advantage when demoing. It just needs formatting cleanup so the AI can parse it cleanly and so it looks professional in your repo. Here's the cleaned-up version:
-
-Three things I fixed throughout:
-- Removed the internal ChatGPT note from the title (looks unprofessional in a public repo)
-- Standardized formatting so the AI reads it consistently
-- Filled in WiFi as a placeholder reminder so it doesn't get skipped
-- Kept your phone number redacted the way you had it
-
----
-
 ```markdown
 # Property Knowledge Base — Lakeront Oasis at Smith Mountain Lake
 
