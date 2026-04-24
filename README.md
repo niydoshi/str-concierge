@@ -19,11 +19,14 @@ Build a simple AI concierge prototype that can answer common guest questions usi
 
 ## Current Version
 
-The current version starts simple:
+The current version is intentionally simple and focused on understanding the workflow before adding more complexity:
 
-1. A guest asks a question
-2. The system checks a structured property knowledge base
-3. The system returns a suggested response
+1. A guest asks a question  
+2. The system references a structured property knowledge base  
+3. The question and property context are sent to an AI API  
+4. The system generates a suggested, guest-friendly response  
+
+A simple rule-based version is also included as a baseline to demonstrate the progression from static responses to an API-driven approach.
 
 ## Data Sources
 
@@ -40,6 +43,7 @@ Future versions may use:
 - How to build small before adding complexity
 - How to think about trust, accuracy, and escalation
 - How AI workflows could support hospitality operations
+  
 
 ## Status
 
