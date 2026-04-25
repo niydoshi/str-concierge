@@ -17,7 +17,7 @@ def load_knowledge_base():
 def ask_concierge(question: str):
     if not question.strip():
         return "Please enter a question.", None
-    
+
     try:
         knowledge_base = load_knowledge_base()
         
