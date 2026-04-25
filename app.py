@@ -48,7 +48,7 @@ Property Information:
         
         # Step 2: Convert answer to speech using ElevenLabs
         audio = eleven_client.text_to_speech.convert(
-            voice_id="EXAVITQu4vr4xnSDxMaL",
+            voice_id="21m00Tcm4TlvDq8ikWAM",
             text=text_answer,
             model_id="eleven_turbo_v2_5",
         )
