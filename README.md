@@ -3,19 +3,38 @@ AI concierge prototype for short-term rental guest communication and repetitive 
 
 # STR Concierge
 
-STR Concierge is a work-in-progress learning project focused on reducing repetitive guest communication for short-term rental hosts.
+STR Concierge is a work-in-progress learning project focused on reducing repetitive tasks such as guest communication for short-term rental hosts.
 
 The idea came from my own experience managing a short-term rental. As I thought about scaling, I realized that guest communication, pricing, and marketing can quickly become major time drains. This project starts with one of those problems: answering repeated guest questions accurately and consistently.
 
 ## Problem
 
-Guests often ask the same questions about check-in, checkout, parking, pets, amenities, lake access, house rules, and local recommendations.
+Short-term rental hosts lose hours every week answering the same 
+guest questions:
 
-These questions are important, but repetitive. Hosts still need to respond quickly, clearly, and with the right tone.
+- *"What time is check-in?"*
+- *"Is there parking?"*
+- *"Are pets allowed?"*
+- *"What's the WiFi password?"*
 
-## Goal
+These questions are critical to guests but exhausting to answer 
+manually — especially across multiple properties, at odd hours, 
+during peak seasons.
 
-Build a simple AI concierge prototype that can answer common guest questions using trusted property-specific information.
+**The average STR host spends on an average 10-12 hours per week on repetitive 
+guest communication.** This project reduces that to 2 or less per week. 
+
+## The Solution
+
+STR Concierge is an AI-powered voice assistant that:
+
+- 🎤 **Speaks answers aloud** using ElevenLabs TTS
+- 🧠 **Generates accurate responses** from a property-specific 
+  knowledge base using GPT-4o-mini
+- 🚫 **Never guesses** — defers to the host for anything outside 
+  the knowledge base
+- ⚙️ **Requires no code changes** to update property information
+- 🌐 **Runs in any browser** — no app download required
 
 ## Current Version
 
