@@ -1,9 +1,7 @@
 # str-concierge
 AI concierge prototype for short-term rental guest communication and repetitive guest questions.
 
-# STR Concierge
-
-STR Concierge is a work-in-progress learning project focused on reducing repetitive tasks such as guest communication for short-term rental hosts.
+This is a work-in-progress learning project focused on reducing repetitive tasks such as guest communication for short-term rental hosts.
 
 The idea came from my own experience managing a short-term rental. As I thought about scaling, I realized that guest communication, pricing, and marketing can quickly become major time drains. This project starts with one of those problems: answering repeated guest questions accurately and consistently.
 
@@ -47,19 +45,15 @@ The current version is intentionally simple and focused on understanding the wor
 3. The question and property context are sent to an AI API  
 4. The system generates a suggested, guest-friendly response  
 
-A simple rule-based version is also included as a baseline to demonstrate the progression from static responses to an API-driven approach.
+A simple rule-based version is also included as a baseline to demonstrate the progression from static responses to an API-driven approach.<img width="1672" height="941" alt="STR Concierge_Target State Architecture_2" src="https://github.com/user-attachments/assets/b0bcda74-3387-41ea-b206-2d887717ce3e" />
 
-## Data Sources
-
-Future versions may use:
-- Property information documents
-- Past guest messages
-- Airbnb listing details
-- Hostfully reservation and property data
 
 ## Current Architecture
+<img width="1672" height="941" alt="STRConcierge_Current State Architecture_1" src="https://github.com/user-attachments/assets/e28c3686-cf08-4f48-a23f-cd2ed9e1d8c1" />
+
 
 ## Target Architecture (Draft)
+![Uploading STR Concierge_Target State Architecture_2.png…]()
 
 ## What I’m Learning
 
