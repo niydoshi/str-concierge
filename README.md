@@ -6,7 +6,12 @@ It started as a simple learning project based on my own experience managing a sh
 I chose to start with one of the most common pain points: answering the same guest questions over and over, and doing it in a way that’s fast, accurate, and consistent.
 
 ## Demo 
-[Loom]
+Built using camtasia, Elevenlabs Agents, Voice Clone and OpenAI
+
+
+https://github.com/user-attachments/assets/199ad58d-aec7-480d-ba20-9d69ae04569d
+
+
 
 ## Problem
 
