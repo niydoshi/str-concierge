@@ -1,9 +1,9 @@
 # str-concierge
-AI concierge prototype for short-term rental guest communication and repetitive guest questions.
+This is an AI concierge prototype built to handle repetitive guest communication for short-term rental hosts, with the potential to expand into other use cases over time.
 
-This is a work-in-progress learning project focused on reducing repetitive tasks such as guest communication for short-term rental hosts.
+It started as a simple learning project based on my own experience managing a short-term rental. As I began thinking about scaling, it became clear that guest communication, pricing, and marketing can quickly turn into major time drains.
 
-The idea came from my own experience managing a short-term rental. As I thought about scaling, I realized that guest communication, pricing, and marketing can quickly become major time drains. This project starts with one of those problems: answering repeated guest questions accurately and consistently.
+I chose to start with one of the most common pain points: answering the same guest questions over and over, and doing it in a way that’s fast, accurate, and consistent.
 
 ## Demo 
 [Loom]
@@ -19,7 +19,7 @@ guest questions:
 - *"What's the WiFi password?"*
 
 These questions are critical to guests but exhausting to answer 
-manually — especially across multiple properties, at odd hours, 
+manually, especially across multiple properties, at odd hours, 
 during peak seasons.
 
 **The average STR host spends on an average 10-12 hours per week on repetitive 
