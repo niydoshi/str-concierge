@@ -45,15 +45,16 @@ The current version is intentionally simple and focused on understanding the wor
 3. The question and property context are sent to an AI API  
 4. The system generates a suggested, guest-friendly response  
 
-A simple rule-based version is also included as a baseline to demonstrate the progression from static responses to an API-driven approach.<img width="1672" height="941" alt="STR Concierge_Target State Architecture_2" src="https://github.com/user-attachments/assets/b0bcda74-3387-41ea-b206-2d887717ce3e" />
-
+A simple rule-based version is also included as a baseline to demonstrate the progression from static responses to an API-driven approach.
 
 ## Current Architecture
-<img width="1672" height="941" alt="STRConcierge_Current State Architecture_1" src="https://github.com/user-attachments/assets/e28c3686-cf08-4f48-a23f-cd2ed9e1d8c1" />
+<img width="1672" height="941" alt="STRConcierge_Current State Architecture_2" src="https://github.com/user-attachments/assets/a50591ab-8d85-45c4-be1b-dc170d905ac8" />
+
+
 
 
 ## Target Architecture (Draft)
-![Uploading STR Concierge_Target State Architecture_2.png…]()
+<img width="1672" height="941" alt="STR Concierge_Target State Architecture_2" src="https://github.com/user-attachments/assets/906fac2b-072b-430f-bc6e-33ee8d16dc9c" />
 
 ## What I’m Learning
 
