@@ -24,6 +24,8 @@ during peak seasons.
 **The average STR host spends on an average 10-12 hours per week on repetitive 
 guest communication.** This project reduces that to 2 or less per week. 
 
+## Demo 
+
 ## The Solution
 
 STR Concierge is an AI-powered voice assistant that:
@@ -54,6 +56,10 @@ Future versions may use:
 - Past guest messages
 - Airbnb listing details
 - Hostfully reservation and property data
+
+## Current Architecture
+
+## Target Architecture (Draft)
 
 ## What I’m Learning
 
