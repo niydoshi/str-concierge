@@ -5,6 +5,8 @@ This is a work-in-progress learning project focused on reducing repetitive tasks
 
 The idea came from my own experience managing a short-term rental. As I thought about scaling, I realized that guest communication, pricing, and marketing can quickly become major time drains. This project starts with one of those problems: answering repeated guest questions accurately and consistently.
 
+## Demo 
+[Loom]
 ## Problem
 
 Short-term rental hosts lose hours every week answering the same 
@@ -21,8 +23,6 @@ during peak seasons.
 
 **The average STR host spends on an average 10-12 hours per week on repetitive 
 guest communication.** This project reduces that to 2 or less per week. 
-
-## Demo 
 
 ## The Solution
 
@@ -63,7 +63,11 @@ A simple rule-based version is also included as a baseline to demonstrate the pr
 - How to build small before adding complexity
 - How to think about trust, accuracy, and escalation
 - How AI workflows could support hospitality operations
-  
+
+## Roadmap
+
+<img width="1536" height="1024" alt="STRConcierge_Roadmap" src="https://github.com/user-attachments/assets/40094990-99d4-48fa-8e8a-c43fcdb89e3b" />
+
 
 ## Status
 
