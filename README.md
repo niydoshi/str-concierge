@@ -7,6 +7,10 @@ The idea came from my own experience managing a short-term rental. As I thought 
 
 ## Demo 
 [Loom]
+
+## Give it a Try! 
+https://str-concierge.onrender.com/
+
 ## Problem
 
 Short-term rental hosts lose hours every week answering the same 
